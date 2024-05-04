@@ -21,6 +21,11 @@
     "stream"
   ],
   "author": "Herbert He<Herbert.He0229@gmail.com>",
+  "homepage": "https://github.com/HerbertHe/fetch-stream",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HerbertHe/fetch-stream.git"
+  },
   "license": "MIT",
   "devDependencies": {
     "@types/koa": "^2.15.0",
@@ -30,5 +35,9 @@
     "nodemon": "^3.1.0",
     "tsup": "^8.0.2",
     "typescript": "^5.4.5"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
