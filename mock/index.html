@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Fetch Stream Mock</title>
+    </head>
+    <body>
+        <h1>Test Fetch Stream</h1>
+        <button id="abort">Abort</button>
+
+        <div id="content"></div>
+        <script type="module">
+            import { FetchStream } from "./fetch-stream.js"
+            const fetchStream = new FetchStream({
+                preset: "text",
+                timeout: 5000,
+                // onProcess: (val) => {
+                //     document.getElementById(
+                //         "content"
+                //     ).innerHTML += `<div>${val}<div>`
+                // },
+                onDone: () => {
+                    console.log("Done!")
+                },
+                onError: (err) => {
+                    alert(err)
+                },
+            })
+
+            fetchStream.createFetchRequest("/mock")
+
+            document.getElementById("abort").addEventListener("click", () => {
+                fetchStream.abort()
+            })
+        </script>
+    </body>
+</html>

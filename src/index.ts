@@ -2,7 +2,7 @@ export interface IFetchStreamOptions {
     preset?: "text"
     timeout?: number
     decoder?: <T>(value?: Uint8Array) => T
-    sideEffect?: (value?: any) => void
+    onProcess?: (value?: any) => void
     onAbort?: () => void
     onError?: (error: Error) => void
     onTimeout?: () => void
@@ -42,10 +42,10 @@ export class FetchStream {
                             break
                         }
                         const val = new TextDecoder().decode(value)
-                        if (this.#options.sideEffect) {
-                            this.#options.sideEffect(val)
+                        if (this.#options.onProcess) {
+                            this.#options.onProcess(val)
                         } else {
-                            return val
+                            console.log(val)
                         }
                     }
                 } else if (this.#options.decoder) {
@@ -56,10 +56,10 @@ export class FetchStream {
                             break
                         }
                         const val = this.#options.decoder(value)
-                        if (this.#options.sideEffect) {
-                            this.#options.sideEffect(val)
+                        if (this.#options.onProcess) {
+                            this.#options.onProcess(val)
                         } else {
-                            return val
+                            console.log(val)
                         }
                     }
                 } else {
