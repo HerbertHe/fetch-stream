@@ -1,2 +1,3 @@
 # fetch-stream
-A JavaScript library for fetching stream data
+
+A JavaScript library for fetching stream data.
