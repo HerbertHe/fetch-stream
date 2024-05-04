@@ -1,5 +1,6 @@
 {
-  "name": "fetch-stream",
+  "name": "@herberthe/fetch-stream",
+  "private": false,
   "version": "1.0.0",
   "description": "A JavaScript library for fetching stream data.",
   "type": "module",
@@ -13,8 +14,7 @@
   "scripts": {
     "mock": "node ./mock/mock.js",
     "dev": "tsup --watch",
-    "build": "tsup",
-    "test": "vitest"
+    "build": "tsup"
   },
   "keywords": [
     "fetch",
