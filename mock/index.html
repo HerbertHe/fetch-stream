@@ -14,12 +14,12 @@
             import { FetchStream } from "./fetch-stream.js"
             const fetchStream = new FetchStream({
                 preset: "text",
-                timeout: 5000,
-                // onProcess: (val) => {
-                //     document.getElementById(
-                //         "content"
-                //     ).innerHTML += `<div>${val}<div>`
-                // },
+                timeout: -1,
+                onProcess: (val) => {
+                    document.getElementById(
+                        "content"
+                    ).innerHTML += `<div>${val}<div>`
+                },
                 onDone: () => {
                     console.log("Done!")
                 },

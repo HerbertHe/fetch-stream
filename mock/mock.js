@@ -28,10 +28,17 @@ router.get("/mock", async (ctx, next) => {
 
     ctx.body = stream
 
+    let count = 0
+
     const interval = setInterval(() => {
         stream.write(`data: ${Date.now()}\n`)
         stream.write(`asdasdasda\n`)
         stream.write(`qcakmk\n\n`)
+        count++
+
+        if (count >= 100) {
+            stream.end()
+        }
     }, 200)
 
     stream.on("close", () => {

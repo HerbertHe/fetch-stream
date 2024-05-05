@@ -85,7 +85,9 @@ export class FetchStream {
     }
 
     #timeout(timer: number = 6000) {
-        const time = this.#options.timeout || timer
+        const time = this.#options.timeout ?? timer
+        if (time === -1) return
+
         setTimeout(() => {
             this.abort()
             this.#options.onTimeout && this.#options.onTimeout()

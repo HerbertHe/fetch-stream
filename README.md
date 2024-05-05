@@ -36,16 +36,16 @@ fetchStream.createFetchRequest("/mock")
 
 ## Options
 
-| Option    | Required | Type                           | Default     | Description                                         |
-| --------- | -------- | ------------------------------ | ----------- | --------------------------------------------------- |
-| preset    | No       | `"text"`                       | `undefined` | preset decoder                                      |
-| timeout   | No       | `number`                       | `undefined` | timeout in milliseconds                             |
-| decoder   | No       | `<T>(value?: Uint8Array) => T` | `undefined` | custom decoder                                      |
-| onProcess | No       | `(value: T) => void`           | `undefined` | callback function for processing each chunk of data |
-| onDone    | No       | `() => void`                   | `undefined` | callback function when all data is processed        |
-| onError   | No       | `(error: Error) => void`       | `undefined` | callback function when an error occurs              |
-| onAbort   | No       | `() => void`                   | `undefined` | callback function when the request is aborted       |
-| onTimeout | No       | `() => void`                   | `undefined` | callback function when the request times out        |
+| Option    | Required | Type                           | Default     | Description                                                        |
+| --------- | -------- | ------------------------------ | ----------- | ------------------------------------------------------------------ |
+| preset    | No       | `"text"`                       | `undefined` | preset decoder                                                     |
+| timeout   | No       | `number` or `-1`               | `undefined` | timeout in milliseconds(if the value is `-1`, it means no timeout) |
+| decoder   | No       | `<T>(value?: Uint8Array) => T` | `undefined` | custom decoder                                                     |
+| onProcess | No       | `(value: T) => void`           | `undefined` | callback function for processing each chunk of data                |
+| onDone    | No       | `() => void`                   | `undefined` | callback function when all data is processed                       |
+| onError   | No       | `(error: Error) => void`       | `undefined` | callback function when an error occurs                             |
+| onAbort   | No       | `() => void`                   | `undefined` | callback function when the request is aborted                      |
+| onTimeout | No       | `() => void`                   | `undefined` | callback function when the request times out                       |
 
 ## Methods
 
